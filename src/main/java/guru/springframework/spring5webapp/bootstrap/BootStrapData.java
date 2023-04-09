@@ -39,11 +39,18 @@ public class BootStrapData implements CommandLineRunner {
         eric.getBooks().add(ddd);
         ddd.getAuthors().add(eric);
 
+        Book eee = new Book("Java Insel", "56545");
+        eric.getBooks().add(eee);
+        eee.getAuthors().add(eric);
+        
         ddd.setPublisher(publisher);
         publisher.getBooks().add(ddd);
+        eee.setPublisher(publisher);
+        publisher.getBooks().add(eee);
        
         authorRepository.save(eric);
         bookRepository.save(ddd);
+        bookRepository.save(eee);
         publisherRepository.save(publisher);
 
         
